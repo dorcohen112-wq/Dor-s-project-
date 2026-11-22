@@ -121,7 +121,7 @@ sources:
 
 # ------------------------------------------------------------------ filter
 filter:
-  max_experience_years: 4
+  max_experience_years: 3
   max_age_days: 30
 
   exclude_fields:
