@@ -542,7 +542,11 @@ profile:
     # RF / EW
     "rf": {weight: 3, aliases: ["radio frequency", "microwave", "rf systems", "rf testing", "rf test", "מיקרוגל"]}
     "electronic warfare": {weight: 3, aliases: ["ew", "ew systems", "threat simulation", "threat scenarios", "ew simulation", "לוחמה אלקטרונית", "לל\"א"]}
-    "rf lab equipment": {weight: 4, aliases: ["spectrum analyzer", "spectrum analyzers", "network analyzer", "network analyzers", "vna", "signal generator", "signal generators", "rf measurements", "rf instrumentation"]}
+    # ★ highlighted: hands-on with measurement equipment (spectrum analyzer, oscilloscope, ...)
+    "measurement equipment": {weight: 6, aliases: ["spectrum analyzer", "spectrum analyzers", "oscilloscope", "oscilloscopes", "scope", "scopes",
+                              "network analyzer", "network analyzers", "vna", "signal generator", "signal generators", "power supply", "power supplies",
+                              "test equipment", "lab equipment", "measurement equipment", "lab instrumentation", "rf instrumentation", "rf measurements",
+                              "ציוד מדידה", "מכשור מדידה", "מכשירי מדידה", "אוסצילוסקופ", "סקופ", "ספקטרום אנלייזר", "מנתח ספקטרום", "מחולל אותות"]}
     "signal analysis": {weight: 3, aliases: ["vsa", "vector signal analysis", "modulation", "spectrum analysis", "signal processing analysis", "ניתוח אותות"]}
     "rf simulation": {weight: 2, aliases: ["cst", "em simulation", "electromagnetic simulation", "twta", "twt"]}
     "simulation": {weight: 2, aliases: ["simulator", "simulators", "simulations", "סימולציה", "סימולטור"]}
@@ -554,7 +558,7 @@ profile:
     "validation": {weight: 3, aliases: ["system validation", "hardware validation", "interface validation", "v&v", "ולידציה"]}
     "verification": {weight: 2, aliases: ["system verification", "וריפיקציה", "אימות"]}
     "testing": {weight: 2, aliases: ["electrical testing", "lab testing", "test procedures", "בדיקות"]}
-    "lab": {weight: 4, aliases: ["oscilloscope", "oscilloscopes", "lab equipment", "lab instrumentation", "test equipment", "power supply", "power supplies", "מעבדה"]}
+    "lab": {weight: 3, aliases: ["laboratory", "lab work", "lab testing", "hands-on", "מעבדה"]}
     "troubleshooting": {weight: 3, aliases: ["debugging", "debug", "root cause", "root-cause", "תקלות"]}
     "electrical interfaces": {weight: 3, aliases: ["interfaces", "interface validation", "hardware integration", "ממשקים"]}
     # tools
