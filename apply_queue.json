@@ -2393,7 +2393,8 @@
     ],
     "added": "2026-11-22",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "hm-152483495",
@@ -2417,7 +2418,8 @@
     ],
     "added": "2026-11-22",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "me-a24468db-ec96-48fc-bb2b-fcd576e39ba1",
@@ -2449,7 +2451,8 @@
     ],
     "added": "2026-11-22",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "me-a1fbc8e5-2ec7-4a30-b699-dc940e22e259",
@@ -2478,7 +2481,8 @@
     ],
     "added": "2026-11-22",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "me-0dc9875d-91a5-4b2f-a6d1-f7b630123616",
@@ -2505,7 +2509,8 @@
     ],
     "added": "2026-11-22",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "co-FF.274-47.20D",
@@ -2538,7 +2543,8 @@
     ],
     "added": "2026-11-22",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "co-5D.47C",
@@ -2572,7 +2578,8 @@
     ],
     "added": "2026-11-22",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "hm-154160216",
@@ -2601,7 +2608,8 @@
     ],
     "added": "2026-11-22",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "co-FF.47B",
@@ -2630,7 +2638,8 @@
     ],
     "added": "2026-11-22",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "co-CA.A67",
@@ -2667,7 +2676,8 @@
     ],
     "added": "2026-11-22",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "co-74.12D",
@@ -2692,7 +2702,8 @@
     ],
     "added": "2026-11-22",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "co-6F.475",
@@ -2721,6 +2732,7 @@
     ],
     "added": "2026-11-22",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   }
 ]
