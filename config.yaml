@@ -152,6 +152,11 @@ filter:
     - "תעש מערכות"
     - "cyclone"
 
+  # IAI / Elta: hardware jobs only
+  company_rules:
+    - companies: ["iai", "israel aerospace", "elta", "אלתא", "תעשייה אווירית", "התעשייה האווירית", "תע\"א"]
+      only_categories: ["Hardware & Electrical"]
+
   exclude_fields:
     - "IT and System Administration"
     - "DevOps"
@@ -579,6 +584,13 @@ profile:
   highlight_score: 60
   apply_score: 60
   skip_student_roles: true
+  # lower priority: IAI / Elta scores x0.7 (so they rarely get ⭐ or reach the apply queue)
+  company_score_factors:
+    "iai": 0.7
+    "israel aerospace": 0.7
+    "elta": 0.7
+    "אלתא": 0.7
+    "תעשייה אווירית": 0.7
 
   skills:
     # RF / EW

@@ -144,6 +144,9 @@ def filter_jobs(jobs: list[dict], filter_config: dict) -> list[dict]:
     excluded_fields = set(filter_config.get("exclude_fields") or [])
     # companies you never want (e.g. your current employer) — substring match on the company name
     excluded_companies = [c.lower() for c in (filter_config.get("exclude_companies") or [])]
+    # per-company limits: jobs of these companies pass only in the listed categories
+    company_rules = [([c.lower() for c in r.get("companies") or []], set(r.get("only_categories") or []))
+                     for r in (filter_config.get("company_rules") or [])]
 
     passed = []
     rejected = {"company": 0, "age": 0, "field": 0, "experience": 0, "category": 0, "location": 0, "title": 0, "requirements": 0}
@@ -197,6 +200,11 @@ def filter_jobs(jobs: list[dict], filter_config: dict) -> list[dict]:
         exp_mentions = [int(m) for m in EXPERIENCE_PATTERN.findall(clean_reqs)]
         if exp_mentions and max(exp_mentions) > max_exp:
             rejected["requirements"] += 1
+            continue
+
+        if any(only and any(c in company for c in names) and category not in only
+               for names, only in company_rules):
+            rejected["company"] += 1
             continue
 
         job["Category"] = category

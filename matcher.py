@@ -202,6 +202,13 @@ def score_jobs(jobs: list[dict], profile: dict | None, job_types: dict | None = 
         if t:
             job["Job Type"], job["CV"], job["Default Type"] = t["name"], t["cv"], t["default"]
         job["Match Score"], job["Matched Skills"] = score_job(job, t["m"] if t else m)
+        # lower priority for some companies (profile.company_score_factors: {name substring: factor})
+        company = str(job.get("Company") or "").lower()
+        for name, factor in (profile.get("company_score_factors") or {}).items():
+            if name.lower() in company:
+                job["Match Score"] = round(job["Match Score"] * float(factor))
+                job["Matched Skills"] = [*job["Matched Skills"], "low priority company"]
+                break
         if t and t["context_re"]:
             text = " ".join(str(job.get(k) or "") for k in ("Job Title", "Company", "Requirements", "Job Description"))
             if not t["context_re"].search(text):
