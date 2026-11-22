@@ -1,0 +1,584 @@
+goozali_url: "https://airtable.com/appwewqLk7iUY4azc/shrQBuWjXd0YgPqV6/tblnk93ouV3B2ce9b"
+
+# JobRadar config for Dor Cohen — B.Sc. Electrical & Electronics Engineering (Ariel),
+# ~2 years in RF / EW simulation / system integration (IAI-Elta, Elbit).
+# Two CVs:  cvs/rf-ew/cv.pdf  (RF & Electronic Warfare)  ·  cvs/system-integration/cv.pdf  (integration / HW)
+
+# ------------------------------------------------------------------ sources
+source_timeout_seconds: 420
+scan_jitter_minutes: 8
+
+sources:
+  goozali: true
+
+  hiremetech:
+    enabled: true
+    posted_days: 30
+    max_pages: 3
+    queries:
+      - "rf"
+      - "rf engineer"
+      - "microwave"
+      - "radar"
+      - "electronic warfare"
+      - "ew"
+      - "system engineer"
+      - "systems engineer"
+      - "integration"
+      - "integration engineer"
+      - "validation"
+      - "verification"
+      - "test engineer"
+      - "hardware"
+      - "electrical"
+      - "electronics"
+      - "electrical engineer"
+      - "lab"
+      - "bring-up"
+      - "הנדסת מערכת"
+      - "אינטגרציה"
+      - "חומרה"
+      - "אלקטרוניקה"
+      - "חשמל"
+      - "בדיקות"
+
+  rafael: false            # anti-bot protection; Rafael jobs still arrive via LinkedIn/Goozali
+  iai: true                # includes Elta
+  elbit: true
+  mobileye: false          # mostly chip/software roles
+  amazon: false            # mostly chip design (Annapurna) — not your profile
+
+  alljobs:
+    enabled: true
+    max_pages: 2
+    queries: &israeli_queries
+      - "מהנדס RF"
+      - "מהנדס מיקרוגל"
+      - "לוחמה אלקטרונית"
+      - "מכ\"ם"
+      - "מהנדס מערכת"
+      - "הנדסת מערכת"
+      - "מהנדס אינטגרציה"
+      - "אינטגרציה"
+      - "מהנדס בדיקות"
+      - "ולידציה"
+      - "מהנדס חשמל"
+      - "מהנדס אלקטרוניקה"
+      - "מהנדס חומרה"
+      - "RF engineer"
+      - "system engineer"
+      - "integration engineer"
+  jobmaster:
+    enabled: true
+    max_pages: 1
+    queries: *israeli_queries
+
+  indeed:
+    enabled: true
+    sites: ["indeed"]
+    hours_old: 72
+    results_per_term: 50
+    search_terms:
+      - "RF engineer"
+      - "system engineer"
+      - "integration engineer"
+      - "validation engineer"
+      - "test engineer"
+      - "electronic warfare"
+      - "hardware engineer"
+
+  linkedin:
+    enabled: true
+    run_hours: [9, 15]
+    hours_old: 72
+    results_per_term: 25
+    search_terms:
+      - "RF engineer"
+      - "RF test engineer"
+      - "electronic warfare engineer"
+      - "system engineer"
+      - "integration engineer"
+      - "system integration engineer"
+      - "validation engineer"
+      - "test engineer electronics"
+      - "electrical engineer"
+
+  # Big companies on Workday (only jobs in your locations pass the filter)
+  workday:
+    - name: "Intel"
+      url: "https://intel.wd1.myworkdayjobs.com/External"
+    - name: "Applied Materials"
+      url: "https://amat.wd1.myworkdayjobs.com/External"
+    - name: "Motorola Solutions"       # Tel Aviv / Ra'anana
+      url: "https://motorolasolutions.wd5.myworkdayjobs.com/Careers"
+      max_pages: 20
+    - name: "HP Indigo"                # Ness Ziona / Kiryat Gat
+      url: "https://hp.wd5.myworkdayjobs.com/ExternalCareerSite"
+      max_pages: 20
+    - name: "KLA"
+      url: "https://kla.wd1.myworkdayjobs.com/Search"
+      max_pages: 60
+
+# ------------------------------------------------------------------ filter
+filter:
+  max_experience_years: 4
+  max_age_days: 30
+
+  exclude_fields:
+    - "IT and System Administration"
+    - "DevOps"
+    - "Cybersecurity"
+    - "Data Science, ML & Algorithms"
+    - "Data Analytics & BI"
+    - "Data Analyst"
+    - "Data Engineering"
+    - "Frontend Development"
+    - "Mobile Development"
+    - "Product Management"
+    - "UI/UX, Design & Content"
+    - "Finance"
+    - "Sales"
+    - "Marketing"
+    - "Business Development"
+    - "Customer Success"
+    - "HR & Recruitment"
+    - "Compliance, Legal & Policy"
+    - "Operations"
+    - "C-Level"
+    - "Natural Science"
+
+  # A job passes only if it fits one of these. First match wins.
+  categories:
+    "RF & EW":
+      source_fields: ["RF", "RF Engineering"]
+      title_keywords:
+        - "rf"
+        - "microwave"
+        - "mmwave"
+        - "radar"
+        - "antenna"
+        - "antennas"
+        - "ew"
+        - "electronic warfare"
+        - "sigint"
+        - "elint"
+        - "comint"
+        - "esm"
+        - "ecm"
+        - "spectrum"
+        - "מיקרוגל"
+        - "מכ\"ם"
+        - "אנטנה"
+        - "אנטנות"
+        - "לוחמה אלקטרונית"
+        - "לל\"א"
+
+    "Integration & System":
+      exclude_fields: ["Software Engineering", "QA"]
+      exclude_title_keywords:
+        - "developer"
+        - "מפתח"
+        - "מפתחת"
+        - "מפתח/ת"
+        - "מפתח.ת"
+        - "fhir"
+        - "glue"
+        - "neural"
+        - "business systems"
+        - "configuration management"
+        - "ניהול מידע הנדסי"
+        - "structural"
+      source_fields: ["הנדסת מערכת", "System Engineering", "Systems Engineering", "Integration"]
+      title_keywords:
+        - "integration"
+        - "integrator"
+        - "system engineer"
+        - "systems engineer"
+        - "system engineering"
+        - "systems engineering"
+        - "system test"
+        - "אינטגרציה"
+        - "אינטגרטור"
+        - "הנדסת מערכת"
+        - "מהנדס מערכת"
+        - "מהנדסת מערכת"
+        - "מהנדס/ת מערכת"
+        - "מהנדס.ת מערכת"
+
+    "Validation & Verification":
+      source_fields: ["Validation", "Verification"]
+      exclude_title_keywords: ["software", "תוכנה", "qa", "manual qa", "automation developer", "design verification", "dv"]
+      title_keywords:
+        - "validation"
+        - "verification"
+        - "v&v"
+        - "hw test"
+        - "hardware test"
+        - "test engineer"
+        - "ולידציה"
+        - "וריפיקציה"
+        - "אימות"
+        - "בדיקות מערכת"
+        - "מהנדס בדיקות"
+        - "מהנדס/ת בדיקות"
+
+    "Hardware & Electrical":
+      source_fields:
+        - "Hardware"
+        - "Hardware Engineering"
+        - "Hardware & Electronics"
+        - "Electrical"
+        - "Electrical Engineering"
+        - "אלקטרוניקה"
+      title_keywords:
+        - "hardware"
+        - "hw"
+        - "electrical"
+        - "electronics"
+        - "electronic"
+        - "analog"
+        - "lab engineer"
+        - "חומרה"
+        - "אלקטרוניקה"
+        - "חשמל"
+
+  # Everywhere except the north. A job with no location passes.
+  locations:
+    # Center / Gush Dan
+    - "Tel Aviv"
+    - "Tel-Aviv"
+    - "Petach Tikva"
+    - "Petah Tikva"
+    - "Petah Tiqva"
+    - "Ramat Gan"
+    - "Givatayim"
+    - "Bnei Brak"
+    - "Holon"
+    - "Bat Yam"
+    - "Rishon"
+    - "Rehovot"
+    - "Ness Ziona"
+    - "Nes Ziona"
+    - "Lod"
+    - "Ramla"
+    - "Yavne"
+    - "Airport City"
+    - "Ben Gurion"
+    - "Yehud"
+    - "Or Yehuda"
+    - "Kiryat Ono"
+    - "Shoham"
+    - "Modiin"
+    - "Modi'in"
+    - "Center District"
+    - "Central region"
+    - "Tel Aviv and Center"
+    - "Tel Aviv District"
+    - "Israel - Central"
+    - "Center"
+    - "Shfela"
+    - "תל אביב"
+    - "ת\"א"
+    - "גבעתיים"
+    - "רמת גן"
+    - "בני ברק"
+    - "פתח תקווה"
+    - "פתח תקוה"
+    - "חולון"
+    - "בת ים"
+    - "ראשון לציון"
+    - "תל השומר"
+    - "רחובות"
+    - "נס ציונה"
+    - "יבנה"
+    - "רמלה"
+    - "יהוד"
+    - "שוהם"
+    - "נתב\"ג"
+    - "בן גוריון"
+    - "באר יעקב"
+    - "לוד"
+    - "מודיעין"
+    - "גוש דן"
+    - "מרכז"
+    - "שפלה"
+    # Sharon
+    - "Herzliya"
+    - "Herzlia"
+    - "Ra'anana"
+    - "Raanana"
+    - "Kfar Saba"
+    - "Hod Hasharon"
+    - "Ramat Hasharon"
+    - "Netanya"
+    - "Even Yehuda"
+    - "Kadima"
+    - "Tzur Yigal"
+    - "Kfar Yona"
+    - "Sharon"
+    - "הרצליה"
+    - "רעננה"
+    - "כפר סבא"
+    - "הוד השרון"
+    - "רמת השרון"
+    - "נתניה"
+    - "אבן יהודה"
+    - "כפר יונה"
+    - "שרון"
+    # Jerusalem / Samaria
+    - "Jerusalem"
+    - "Ariel"
+    - "Rosh HaAyin"
+    - "Rosh Ha'Ayin"
+    - "Rosh Haayin"
+    - "Barkan"
+    - "Elad"
+    - "Beit Shemesh"
+    - "Mevaseret"
+    - "ירושלים"
+    - "אריאל"
+    - "ראש העין"
+    - "ברקן"
+    - "אלעד"
+    - "בית שמש"
+    - "מבשרת"
+    # Ashdod / Ashkelon / south
+    - "Ashdod"
+    - "Ashkelon"
+    - "Gedera"
+    - "Gan Yavne"
+    - "Kiryat Gat"
+    - "Kiryat Malachi"
+    - "Kiryat Ekron"
+    - "Be'er Sheva"
+    - "Beer Sheva"
+    - "Beersheba"
+    - "Beer-Sheva"
+    - "Omer"
+    - "Dimona"
+    - "Yeruham"
+    - "Ofakim"
+    - "Sderot"
+    - "Netivot"
+    - "Arad"
+    - "Eilat"
+    - "Southern District"
+    - "South"
+    - "אשדוד"
+    - "אשקלון"
+    - "גדרה"
+    - "גן יבנה"
+    - "קריית גת"
+    - "קרית גת"
+    - "קריית מלאכי"
+    - "קרית מלאכי"
+    - "קריית עקרון"
+    - "באר שבע"
+    - "ב\"ש"
+    - "עומר"
+    - "דימונה"
+    - "ירוחם"
+    - "אופקים"
+    - "שדרות"
+    - "נתיבות"
+    - "ערד"
+    - "אילת"
+    - "דרום"
+
+  allow_title_keywords: []
+
+  # Keep junior / mid level only, and drop non-engineering roles.
+  exclude_title_keywords:
+    - "senior"
+    - "sr"
+    - "lead"
+    - "leader"
+    - "staff"
+    - "principal"
+    - "manager"
+    - "director"
+    - "vp"
+    - "head of"
+    - "chief"
+    - "architect"
+    - "expert"
+    - "fellow"
+    - "student"
+    - "intern"
+    - "internship"
+    - "בכיר"
+    - "בכירה"
+    - "ראש צוות"
+    - "ראש תחום"
+    - "ראש מחלקה"
+    - "מנהל"
+    - "מנהלת"
+    - "מוביל"
+    - "מובילה"
+    - "מומחה"
+    - "מומחית"
+    - "ארכיטקט"
+    - "סטודנט"
+    - "סטודנטית"
+    - "experienced"
+    - "מנוסה"
+    - "מנוסה/ת"
+    - "ראש/ת"
+    - "ראש.ת"
+    - "ראשי"
+    - "ראשי/ת"
+    - "ראשית"
+    - "leade"
+    - "practical engineer"
+    - "technologist"
+    - "instructor"
+    - "מדריך"
+    - "product specialist"
+    - "operation specialist"
+    - "רכש"
+    - "מפקח"
+    - "מפקח/ת"
+    - "מבקר"
+    - "מבקר/ת"
+    - "soc analyst"
+    - "mechanical"
+    - "מכונות"
+    - "מכני"
+    - "מכנית"
+    - "technician"
+    - "טכנאי"
+    - "טכנאית"
+    - "buyer"
+    - "procurement"
+    - "pilot"
+    - "sales"
+    - "account"
+    - "recruiter"
+    - "devops"
+    - "cloud"
+    - "salesforce"
+    - "sap"
+    - "crm"
+    - "erp"
+    - "saas"
+    - "api"
+    - "web"
+    - "backend"
+    - "frontend"
+    - "full stack"
+    - "fullstack"
+    - "data engineer"
+    - "implementation"
+    - "it"
+
+department_mapping:
+  "RF": "RF & EW"
+  "Hardware": "Hardware & Electrical"
+  "Hardware Engineering": "Hardware & Electrical"
+  "Electrical Engineering": "Hardware & Electrical"
+  "Validation": "Validation & Verification"
+  "Verification": "Validation & Verification"
+  "System Engineering": "Integration & System"
+  "Systems Engineering": "Integration & System"
+  "Integration": "Integration & System"
+
+companies: []
+
+# ------------------------------------------------------------------ notifications
+# Telegram only. Secrets needed: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
+discord:
+  enabled: false
+
+discord_type_webhooks: {}
+discord_webhooks: {}
+
+telegram:
+  enabled: true
+  bot_token_env: "TELEGRAM_BOT_TOKEN"
+  chat_id_env: "TELEGRAM_CHAT_ID"
+  topics: {}
+  chats: {}
+
+# ------------------------------------------------------------------ CV match score
+# "skills" = what your CVs actually show. "gaps" = common requirements they don't show.
+profile:
+  experience_years: 2          # Elta student 2024–25 + engineer since Apr 2025
+  penalty_per_year: 0.22
+  min_evidence: 10
+  highlight_score: 60
+  apply_score: 60
+  skip_student_roles: true
+
+  skills:
+    # RF / EW
+    "rf": {weight: 4, aliases: ["radio frequency", "microwave", "rf systems", "rf testing", "rf test", "מיקרוגל"]}
+    "electronic warfare": {weight: 4, aliases: ["ew", "ew systems", "threat simulation", "threat scenarios", "ew simulation", "לוחמה אלקטרונית", "לל\"א"]}
+    "rf lab equipment": {weight: 4, aliases: ["spectrum analyzer", "spectrum analyzers", "network analyzer", "network analyzers", "vna", "signal generator", "signal generators", "rf measurements", "rf instrumentation"]}
+    "signal analysis": {weight: 3, aliases: ["vsa", "vector signal analysis", "modulation", "spectrum analysis", "signal processing analysis", "ניתוח אותות"]}
+    "rf simulation": {weight: 2, aliases: ["cst", "em simulation", "electromagnetic simulation", "twta", "twt"]}
+    "simulation": {weight: 2, aliases: ["simulator", "simulators", "simulations", "סימולציה", "סימולטור"]}
+    # integration / validation
+    "system integration": {weight: 4, aliases: ["hw/sw integration", "integration engineer", "integrator", "subsystem integration", "system deployment", "שילובים"]}
+    "integration": {weight: 2, aliases: ["אינטגרציה"]}
+    "system engineering": {weight: 3, aliases: ["system engineer", "systems engineer", "systems engineering", "הנדסת מערכת", "מהנדס מערכת"]}
+    "bring-up": {weight: 3, aliases: ["bring up", "bringup", "subsystem bring-up"]}
+    "validation": {weight: 3, aliases: ["system validation", "hardware validation", "interface validation", "v&v", "ולידציה"]}
+    "verification": {weight: 2, aliases: ["system verification", "וריפיקציה", "אימות"]}
+    "testing": {weight: 2, aliases: ["electrical testing", "lab testing", "test procedures", "בדיקות"]}
+    "lab": {weight: 3, aliases: ["oscilloscope", "oscilloscopes", "lab equipment", "lab instrumentation", "test equipment", "power supply", "power supplies", "מעבדה"]}
+    "troubleshooting": {weight: 3, aliases: ["debugging", "debug", "root cause", "root-cause", "תקלות"]}
+    "electrical interfaces": {weight: 2, aliases: ["interfaces", "interface validation", "hardware integration", "ממשקים"]}
+    # tools
+    "matlab": {weight: 3, aliases: ["simulink"]}
+    "python": {weight: 2, aliases: ["scripting"]}
+    "sql": {weight: 2, aliases: ["database", "databases", "sql server", "mysql"]}
+    "circuit simulation": {weight: 1, aliases: ["ltspice", "spice", "psim"]}
+    "fpga basics": {weight: 1, aliases: ["vivado", "rtl"]}
+    # domain / general
+    "defense": {weight: 2, aliases: ["defence", "airborne", "naval", "aerospace", "ביטחוני", "ביטחון", "בטחוני"]}
+    "multidisciplinary": {weight: 1, aliases: ["cross-functional", "cross functional", "multidisciplinary", "multi-disciplinary", "רב תחומי"]}
+    "hardware": {weight: 1, aliases: ["hw", "electronics", "חומרה", "אלקטרוניקה"]}
+    "b.sc ee": {weight: 2, aliases: ["electrical engineering", "electronics engineering", "electrical and electronics", "b.sc in electrical", "הנדסת חשמל", "הנדסת אלקטרוניקה", "מהנדס חשמל"]}
+
+  gaps:
+    "rf circuit design": {weight: 2, aliases: ["rf design", "pa design", "lna", "mmic", "rfic", "keysight ads", "hfss", "rf circuit"]}
+    "si/pi": {weight: 2, aliases: ["power integrity", "si simulation", "pi simulation", "timing analysis"]}
+    "high-speed interfaces": {weight: 3, aliases: ["pcie", "ddr", "mipi", "serdes", "high speed", "high-speed", "usb 3", "usb3"]}
+    "board design": {weight: 3, aliases: ["board designer", "pcb design", "pcba", "designing boards", "תכן כרטיסים", "פיתוח כרטיסים"]}
+    "pcb tools": {weight: 2, aliases: ["altium", "orcad", "allegro", "xpedition"]}
+    "dsp": {weight: 2, aliases: ["digital signal processing", "dsp algorithms"]}
+    "microcontrollers": {weight: 2, aliases: ["stm32", "microcontroller", "microcontrollers", "mcu", "arm cortex"]}
+    "firmware/embedded": {weight: 3, aliases: ["firmware", "embedded linux", "device driver", "device drivers", "bsp", "yocto", "rtos", "קושחה"]}
+    "military buses": {weight: 1, aliases: ["mil-std-1553", "1553", "arinc", "arinc 429", "rs422", "rs-422", "rs485", "can bus"]}
+    "networking": {weight: 1, aliases: ["ethernet", "tcp/ip", "networking"]}
+    "uvm": {weight: 3, aliases: ["universal verification methodology", "systemverilog", "system verilog"]}
+    "asic flow": {weight: 3, aliases: ["physical design", "place and route", "static timing", "dft", "synthesis", "cadence", "synopsys"]}
+    "power electronics": {weight: 2, aliases: ["power supply design", "dc-dc", "dc/dc", "power electronics"]}
+    "labview": {weight: 1, aliases: ["teststand"]}
+    "ml/vision": {weight: 2, aliases: ["computer vision", "deep learning", "machine learning", "image processing"]}
+    "software stack": {weight: 2, aliases: ["java", "c#", ".net", "javascript", "kubernetes", "docker", "aws", "azure"]}
+    "advanced degree": {weight: 3, aliases: ["phd", "ph.d", "m.sc required", "msc required", "דוקטורט"]}
+    "mechanical": {weight: 3, aliases: ["solidworks", "mechanical design", "מכונות"]}
+
+# ------------------------------------------------------------------ job types = CV folders
+# A job gets the FIRST type whose title_keywords match its title (else the default type).
+job_types:
+  "RF & EW":
+    cv: "cvs/rf-ew/cv.pdf"
+    title_keywords: ["rf", "microwave", "mmwave", "radar", "antenna", "antennas", "ew",
+                     "electronic warfare", "sigint", "elint", "comint", "esm", "ecm", "spectrum",
+                     "מיקרוגל", "מכ\"ם", "אנטנה", "אנטנות", "לוחמה אלקטרונית", "לל\"א"]
+    skills:
+      "c/c++": {weight: 1, aliases: ["c++", "cpp"]}
+      "rf validation": {weight: 2, aliases: ["rf validation", "rf verification", "rf integration"]}
+
+  # Integration / system / validation / hardware jobs -> the integration CV
+  "System & Integration":
+    default: true
+    cv: "cvs/system-integration/cv.pdf"
+    title_keywords: ["integration", "integrator", "system", "systems", "validation", "verification",
+                     "test", "hardware", "hw", "electronics", "electrical", "lab",
+                     "אינטגרציה", "מערכת", "ולידציה", "בדיקות", "חומרה", "אלקטרוניקה", "חשמל"]
+    skills:
+      "low-speed protocols": {weight: 1, aliases: ["uart", "i2c"]}
+      "signal integrity basics": {weight: 1, aliases: ["signal integrity"]}
