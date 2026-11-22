@@ -571,7 +571,44 @@ department_mapping:
   "Systems Engineering": "Integration & System"
   "Integration": "Integration & System"
 
-companies: []
+# Career pages of hardware companies & startups (Comeet boards, read directly)
+companies:
+  - name: "DriveNets"            # Ra'anana — board design, system validation
+    platform: "comeet"
+    slug: "drivenets"
+    uid: "72.006"
+  - name: "Xsight Labs"          # Givatayim — post-silicon, hardware
+    platform: "comeet"
+    slug: "xsightlabs"
+    uid: "46.00C"
+  - name: "Ceva"                 # Ra'anana — integration & validation
+    platform: "comeet"
+    slug: "ceva"
+    uid: "76.005"
+  - name: "Innoviz"              # Rosh Ha'Ayin — LiDAR, HW integration
+    platform: "comeet"
+    slug: "innoviz"
+    uid: "52.004"
+  - name: "Quantum Machines"     # Tel Aviv — electronics / hardware
+    platform: "comeet"
+    slug: "quantummachines"
+    uid: "D6.000"
+  - name: "VAST Data"            # Tel Aviv — hardware system engineer
+    platform: "comeet"
+    slug: "vastdata"
+    uid: "43.001"
+  - name: "Kela Technologies"    # Tel Aviv — defense-tech startup
+    platform: "comeet"
+    slug: "kelasys"
+    uid: "2A.007"
+  - name: "Majestic Labs"        # Ra'anana — AI hardware startup
+    platform: "comeet"
+    slug: "majesticlabs"
+    uid: "AA.004"
+  - name: "Percepto"             # drones / robotics startup
+    platform: "comeet"
+    slug: "percepto"
+    uid: "44.000"
 
 # ------------------------------------------------------------------ notifications
 # Telegram only. Secrets needed: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID

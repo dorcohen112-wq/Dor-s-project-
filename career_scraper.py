@@ -11,7 +11,7 @@ COMEET_TOKEN_PATTERN = re.compile(r'"token"\s*:\s*"([A-Fa-f0-9]+)"')
 
 def fetch_greenhouse_jobs(token: str) -> list[dict]:
     """Fetch all jobs from a Greenhouse job board. Returns raw JSON list."""
-    url = f"https://boards-api.greenhouse.io/v1/boards/{token}/jobs"
+    url = f"https://boards-api.greenhouse.io/v1/boards/{token}/jobs?content=true"
     response = requests.get(url, timeout=30)
     response.raise_for_status()
     return response.json()["jobs"]
@@ -40,7 +40,7 @@ def fetch_comeet_jobs(slug: str, uid: str) -> list[dict]:
     token = match.group(1)
 
     api_url = f"https://www.comeet.co/careers-api/2.0/company/{uid}/positions"
-    response = requests.get(api_url, params={"token": token, "details": "false"}, timeout=30)
+    response = requests.get(api_url, params={"token": token, "details": "true"}, timeout=30)
     response.raise_for_status()
     return response.json()
 
@@ -52,8 +52,33 @@ def resolve_field(dept_name: str, company_name: str, mapping: dict) -> str | Non
     return field
 
 
+def _description(raw: dict, platform: str) -> str:
+    """Job text for CV scoring (HTML is fine — the matcher strips tags)."""
+    import html as _html
+    if platform == "greenhouse":
+        return _html.unescape(raw.get("content") or "")
+    if platform == "lever":
+        parts = [raw.get("descriptionPlain") or ""]
+        for lst in raw.get("lists") or []:
+            parts.append(f"{lst.get('text', '')}\n{lst.get('content', '')}")
+        return "\n".join(parts)
+    if platform == "comeet":
+        return "\n".join(f"{d.get('name', '')}\n{d.get('value') or ''}" for d in raw.get("details") or [])
+    return ""
+
+
 def normalize_job(raw: dict, platform: str, company_name: str, department_mapping: dict) -> dict:
     """Convert a raw API job dict to our standard pipeline format."""
+    job = _normalize_job(raw, platform, company_name, department_mapping)
+    try:
+        desc = _description(raw, platform)
+    except Exception:  # a description is a bonus, never a reason to drop the job
+        desc = ""
+    job["Job Description"] = job["Requirements"] = desc
+    return job
+
+
+def _normalize_job(raw: dict, platform: str, company_name: str, department_mapping: dict) -> dict:
     if platform == "greenhouse":
         dept_name = (raw.get("departments") or [{}])[0].get("name", "")
         return {
