@@ -173,7 +173,7 @@ filter:
         - "Electrical"
         - "Electrical Engineering"
         - "אלקטרוניקה"
-      exclude_title_keywords: ["software", "תוכנה", "design verification", "dv", "physical design", "vlsi", "asic"]
+      exclude_title_keywords: ["software", "תוכנה"]
       title_keywords:
         - "hardware"
         - "hw"
@@ -191,6 +191,17 @@ filter:
         - "power electronics"
         - "bring-up"
         - "lab engineer"
+        # chips / silicon — kept; the CV match score decides how relevant each one is
+        - "silicon"
+        - "post-silicon"
+        - "pre-silicon"
+        - "chip"
+        - "soc"
+        - "asic"
+        - "vlsi"
+        - "emulation"
+        - "שבבים"
+        - "שבב"
         - "חומרה"
         - "אלקטרוניקה"
         - "חשמל"
@@ -256,7 +267,7 @@ filter:
 
     "Validation & Verification":
       source_fields: ["Validation", "Verification"]
-      exclude_title_keywords: ["software", "תוכנה", "qa", "manual qa", "automation developer", "design verification", "dv"]
+      exclude_title_keywords: ["software", "תוכנה", "qa", "manual qa", "automation developer"]
       title_keywords:
         - "validation"
         - "verification"
@@ -518,16 +529,6 @@ filter:
     - "tier"
     - "software"
     - "תוכנה"
-    # chip design / silicon roles (not your background)
-    - "silicon"
-    - "post-silicon"
-    - "pre-silicon"
-    - "formal"
-    - "emulation"
-    - "npu"
-    - "ddr"
-    - "asic"
-    - "vlsi"
 
 department_mapping:
   "RF": "RF & EW"
@@ -641,6 +642,7 @@ job_types:
     default: true
     cv: "cvs/hardware/cv.pdf"
     title_keywords: ["hardware", "hw", "electronics", "electrical", "board", "pcb", "analog", "fpga",
+                     "silicon", "post-silicon", "chip", "soc", "asic", "vlsi", "emulation", "שבבים",
                      "circuit", "bring-up", "lab", "integration", "integrator", "system", "systems",
                      "validation", "verification", "test",
                      "חומרה", "אלקטרוניקה", "חשמל", "כרטיסים", "אינטגרציה", "מערכת", "ולידציה", "בדיקות"]
