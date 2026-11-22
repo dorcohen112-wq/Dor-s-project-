@@ -8,9 +8,9 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "scan = send new jobs · dry-run = only show · mark-seen = remember current jobs, send nothing · rescore = re-score all open jobs"
+        description: "scan = send new jobs · dry-run = only show · mark-seen = remember current jobs, send nothing · rescore = re-score all open jobs · send-queue = send the best unsent apply-queue jobs to Telegram"
         type: choice
-        options: [scan, dry-run, mark-seen, rescore]
+        options: [scan, dry-run, mark-seen, rescore, send-queue]
         default: dry-run
 
 permissions:
@@ -56,6 +56,7 @@ jobs:
             dry-run)   python main.py --dry-run ;;
             mark-seen) python main.py --mark-seen ;;
             rescore)   python main.py --rescore ;;
+            send-queue) python send_queue.py --limit 25 ;;
           esac 2>&1 | tee scan-output.txt
           exit "${PIPESTATUS[0]}"
 
