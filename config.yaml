@@ -52,8 +52,8 @@ sources:
   rafael: false            # anti-bot protection; Rafael jobs still arrive via LinkedIn/Goozali
   iai: true                # includes Elta
   elbit: false             # current employer — off
-  mobileye: false          # mostly chip/software roles
-  amazon: false            # mostly chip design (Annapurna) — not your profile
+  mobileye: true
+  amazon: true             # incl. Annapurna Labs
 
   alljobs:
     enabled: true
