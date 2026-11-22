@@ -90,7 +90,7 @@ def parse_alljobs_page(page_html: str) -> list[dict]:
         location = _text(_first(r"""class=["'][^"']*job-content-top-location[^"']*["'][^>]*>(.*?)</div>""", chunk))
         location = re.sub(r"^\s*מיקום המשרה\s*:?\s*", "", location).replace("\n", ", ").strip() or None
         age = _text(_first(r"""class=["']job-content-top-date["'][^>]*>(.*?)</div>""", chunk))
-        desc = _first(r"""class=["']job-content-top-desc[^"']*AR[^"']*["'][^>]*>(.*?)(?:<div[^>]*class=["']job-content-top-desc["']|job-content-top-moreimg|$)""", chunk)
+        desc = _first(r"""class=["']job-content-top-desc[^"']*\b(?:AR|AL)\b[^"']*["'][^>]*>(.*?)(?:<div[^>]*class=["']job-content-top-desc["']|job-content-top-moreimg|$)""", chunk)
         jobs.append({
             "Job ID": f"aj-{job_id}",
             "Job Title": title,
