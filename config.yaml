@@ -51,7 +51,7 @@ sources:
 
   rafael: false            # anti-bot protection; Rafael jobs still arrive via LinkedIn/Goozali
   iai: true                # includes Elta
-  elbit: true
+  elbit: false             # current employer — off
   mobileye: false          # mostly chip/software roles
   amazon: false            # mostly chip design (Annapurna) — not your profile
 
@@ -139,6 +139,18 @@ sources:
 filter:
   max_experience_years: 3
   max_age_days: 30
+
+  # Never show jobs from these companies (current employer + its subsidiaries)
+  exclude_companies:
+    - "elbit"
+    - "אלביט"
+    - "elisra"
+    - "אליסרה"
+    - "elop"
+    - "אלאופ"
+    - "imi systems"
+    - "תעש מערכות"
+    - "cyclone"
 
   exclude_fields:
     - "IT and System Administration"

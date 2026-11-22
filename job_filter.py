@@ -142,11 +142,19 @@ def filter_jobs(jobs: list[dict], filter_config: dict) -> list[dict]:
 
     max_age = filter_config.get("max_age_days")
     excluded_fields = set(filter_config.get("exclude_fields") or [])
+    # companies you never want (e.g. your current employer) — substring match on the company name
+    excluded_companies = [c.lower() for c in (filter_config.get("exclude_companies") or [])]
 
     passed = []
-    rejected = {"age": 0, "field": 0, "experience": 0, "category": 0, "location": 0, "title": 0, "requirements": 0}
+    rejected = {"company": 0, "age": 0, "field": 0, "experience": 0, "category": 0, "location": 0, "title": 0, "requirements": 0}
 
     for job in jobs:
+        # 0. Excluded company
+        company = str(job.get("Company") or "").lower()
+        if excluded_companies and any(c in company for c in excluded_companies):
+            rejected["company"] += 1
+            continue
+
         # 0. Age + excluded source field
         if max_age is not None:
             age = job_age_days(job)
