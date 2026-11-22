@@ -145,8 +145,21 @@ def filter_jobs(jobs: list[dict], filter_config: dict) -> list[dict]:
     # companies you never want (e.g. your current employer) — substring match on the company name
     excluded_companies = [c.lower() for c in (filter_config.get("exclude_companies") or [])]
     # per-company limits: jobs of these companies pass only in the listed categories
-    company_rules = [([c.lower() for c in r.get("companies") or []], set(r.get("only_categories") or []))
-                     for r in (filter_config.get("company_rules") or [])]
+    # `exceptions`: a job outside those categories still passes if its title matches title_keywords
+    # and its title+description match every keyword group in require_all
+    company_rules = []
+    for r in filter_config.get("company_rules") or []:
+        exceptions = [(compile_keywords(e.get("title_keywords") or []),
+                       [compile_keywords(g) for g in e.get("require_all") or []])
+                      for e in r.get("exceptions") or []]
+        company_rules.append(([c.lower() for c in r.get("companies") or []],
+                              set(r.get("only_categories") or []), exceptions))
+
+    def _rule_exception(job, exceptions) -> bool:
+        title = job.get("Job Title") or ""
+        text = " ".join(str(job.get(k) or "") for k in ("Job Title", "Requirements", "Job Description"))
+        return any(t_re and t_re.search(title) and all(g and g.search(text) for g in groups)
+                   for t_re, groups in exceptions)
 
     passed = []
     rejected = {"company": 0, "age": 0, "field": 0, "experience": 0, "category": 0, "location": 0, "title": 0, "requirements": 0}
@@ -203,7 +216,8 @@ def filter_jobs(jobs: list[dict], filter_config: dict) -> list[dict]:
             continue
 
         if any(only and any(c in company for c in names) and category not in only
-               for names, only in company_rules):
+               and not _rule_exception(job, exceptions)
+               for names, only, exceptions in company_rules):
             rejected["company"] += 1
             continue
 

@@ -156,6 +156,12 @@ filter:
   company_rules:
     - companies: ["iai", "israel aerospace", "elta", "אלתא", "תעשייה אווירית", "התעשייה האווירית", "תע\"א"]
       only_categories: ["Hardware & Electrical"]
+      exceptions:
+        # radar jobs too — only when the posting involves hardware AND validation
+        - title_keywords: ["radar", "מכ\"ם", "מכם"]
+          require_all:
+            - ["hardware", "hw", "חומרה"]
+            - ["validation", "verification", "v&v", "ולידציה", "וריפיקציה", "אימות", "בדיקות"]
 
   exclude_fields:
     - "IT and System Administration"
