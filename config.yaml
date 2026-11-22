@@ -2,7 +2,8 @@ goozali_url: "https://airtable.com/appwewqLk7iUY4azc/shrQBuWjXd0YgPqV6/tblnk93ou
 
 # JobRadar config for Dor Cohen — B.Sc. Electrical & Electronics Engineering (Ariel),
 # ~2 years in RF / EW simulation / system integration (IAI-Elta, Elbit).
-# Two CVs:  cvs/rf-ew/cv.pdf  (RF & Electronic Warfare)  ·  cvs/system-integration/cv.pdf  (integration / HW)
+# Focus: hardware first, RF second.
+# Two CVs:  cvs/hardware/cv.pdf  (hardware / integration — main)  ·  cvs/rf-ew/cv.pdf  (RF & EW)
 
 # ------------------------------------------------------------------ sources
 source_timeout_seconds: 420
@@ -16,12 +17,18 @@ sources:
     posted_days: 30
     max_pages: 3
     queries:
+      - "hardware engineer"
+      - "hardware"
+      - "hw engineer"
+      - "hardware validation"
+      - "hardware integration"
+      - "electronics engineer"
+      - "board"
+      - "analog"
+      - "fpga"
       - "rf"
       - "rf engineer"
-      - "microwave"
-      - "radar"
       - "electronic warfare"
-      - "ew"
       - "system engineer"
       - "systems engineer"
       - "integration"
@@ -52,19 +59,23 @@ sources:
     enabled: true
     max_pages: 2
     queries: &israeli_queries
+      - "מהנדס חומרה"
+      - "מהנדס אלקטרוניקה"
+      - "מהנדס חשמל"
+      - "תכן כרטיסים"
+      - "ולידציה חומרה"
+      - "אינטגרציה חומרה"
+      - "מעבדת חומרה"
+      - "hardware engineer"
+      - "electronics engineer"
       - "מהנדס RF"
-      - "מהנדס מיקרוגל"
       - "לוחמה אלקטרונית"
-      - "מכ\"ם"
       - "מהנדס מערכת"
       - "הנדסת מערכת"
       - "מהנדס אינטגרציה"
       - "אינטגרציה"
       - "מהנדס בדיקות"
       - "ולידציה"
-      - "מהנדס חשמל"
-      - "מהנדס אלקטרוניקה"
-      - "מהנדס חומרה"
       - "RF engineer"
       - "system engineer"
       - "integration engineer"
@@ -79,13 +90,13 @@ sources:
     hours_old: 72
     results_per_term: 50
     search_terms:
-      - "RF engineer"
-      - "system engineer"
-      - "integration engineer"
-      - "validation engineer"
-      - "test engineer"
-      - "electronic warfare"
       - "hardware engineer"
+      - "electronics engineer"
+      - "hardware validation engineer"
+      - "integration engineer"
+      - "system engineer"
+      - "test engineer"
+      - "RF engineer"
 
   linkedin:
     enabled: true
@@ -93,18 +104,23 @@ sources:
     hours_old: 72
     results_per_term: 25
     search_terms:
-      - "RF engineer"
-      - "RF test engineer"
-      - "electronic warfare engineer"
-      - "system engineer"
-      - "integration engineer"
-      - "system integration engineer"
-      - "validation engineer"
-      - "test engineer electronics"
+      - "hardware engineer"
+      - "hardware validation engineer"
+      - "hardware integration engineer"
+      - "electronics engineer"
       - "electrical engineer"
+      - "board bring-up"
+      - "system integration engineer"
+      - "test engineer electronics"
+      - "RF engineer"
 
   # Big companies on Workday (only jobs in your locations pass the filter)
   workday:
+    - name: "NVIDIA"                   # Tel Aviv / Ra'anana (Yokneam jobs are filtered out)
+      url: "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite"
+    - name: "Marvell"                  # Petah Tikva
+      url: "https://marvell.wd1.myworkdayjobs.com/MarvellCareers"
+      max_pages: 20
     - name: "Intel"
       url: "https://intel.wd1.myworkdayjobs.com/External"
     - name: "Applied Materials"
@@ -149,6 +165,39 @@ filter:
 
   # A job passes only if it fits one of these. First match wins.
   categories:
+    "Hardware & Electrical":
+      source_fields:
+        - "Hardware"
+        - "Hardware Engineering"
+        - "Hardware & Electronics"
+        - "Electrical"
+        - "Electrical Engineering"
+        - "אלקטרוניקה"
+      exclude_title_keywords: ["software", "תוכנה", "design verification", "dv", "physical design", "vlsi", "asic"]
+      title_keywords:
+        - "hardware"
+        - "hw"
+        - "electrical"
+        - "electronics"
+        - "electronic"
+        - "board"
+        - "board design"
+        - "pcb"
+        - "analog"
+        - "mixed signal"
+        - "digital design"
+        - "fpga"
+        - "circuit"
+        - "power electronics"
+        - "bring-up"
+        - "lab engineer"
+        - "חומרה"
+        - "אלקטרוניקה"
+        - "חשמל"
+        - "כרטיסים"
+        - "אנלוגי"
+        - "מעגלים"
+
     "RF & EW":
       source_fields: ["RF", "RF Engineering"]
       title_keywords:
@@ -221,26 +270,6 @@ filter:
         - "בדיקות מערכת"
         - "מהנדס בדיקות"
         - "מהנדס/ת בדיקות"
-
-    "Hardware & Electrical":
-      source_fields:
-        - "Hardware"
-        - "Hardware Engineering"
-        - "Hardware & Electronics"
-        - "Electrical"
-        - "Electrical Engineering"
-        - "אלקטרוניקה"
-      title_keywords:
-        - "hardware"
-        - "hw"
-        - "electrical"
-        - "electronics"
-        - "electronic"
-        - "analog"
-        - "lab engineer"
-        - "חומרה"
-        - "אלקטרוניקה"
-        - "חשמל"
 
   # Everywhere except the north. A job with no location passes.
   locations:
@@ -511,8 +540,8 @@ profile:
 
   skills:
     # RF / EW
-    "rf": {weight: 4, aliases: ["radio frequency", "microwave", "rf systems", "rf testing", "rf test", "מיקרוגל"]}
-    "electronic warfare": {weight: 4, aliases: ["ew", "ew systems", "threat simulation", "threat scenarios", "ew simulation", "לוחמה אלקטרונית", "לל\"א"]}
+    "rf": {weight: 3, aliases: ["radio frequency", "microwave", "rf systems", "rf testing", "rf test", "מיקרוגל"]}
+    "electronic warfare": {weight: 3, aliases: ["ew", "ew systems", "threat simulation", "threat scenarios", "ew simulation", "לוחמה אלקטרונית", "לל\"א"]}
     "rf lab equipment": {weight: 4, aliases: ["spectrum analyzer", "spectrum analyzers", "network analyzer", "network analyzers", "vna", "signal generator", "signal generators", "rf measurements", "rf instrumentation"]}
     "signal analysis": {weight: 3, aliases: ["vsa", "vector signal analysis", "modulation", "spectrum analysis", "signal processing analysis", "ניתוח אותות"]}
     "rf simulation": {weight: 2, aliases: ["cst", "em simulation", "electromagnetic simulation", "twta", "twt"]}
@@ -521,23 +550,25 @@ profile:
     "system integration": {weight: 4, aliases: ["hw/sw integration", "integration engineer", "integrator", "subsystem integration", "system deployment", "שילובים"]}
     "integration": {weight: 2, aliases: ["אינטגרציה"]}
     "system engineering": {weight: 3, aliases: ["system engineer", "systems engineer", "systems engineering", "הנדסת מערכת", "מהנדס מערכת"]}
-    "bring-up": {weight: 3, aliases: ["bring up", "bringup", "subsystem bring-up"]}
+    "bring-up": {weight: 4, aliases: ["bring up", "bringup", "subsystem bring-up"]}
     "validation": {weight: 3, aliases: ["system validation", "hardware validation", "interface validation", "v&v", "ולידציה"]}
     "verification": {weight: 2, aliases: ["system verification", "וריפיקציה", "אימות"]}
     "testing": {weight: 2, aliases: ["electrical testing", "lab testing", "test procedures", "בדיקות"]}
-    "lab": {weight: 3, aliases: ["oscilloscope", "oscilloscopes", "lab equipment", "lab instrumentation", "test equipment", "power supply", "power supplies", "מעבדה"]}
+    "lab": {weight: 4, aliases: ["oscilloscope", "oscilloscopes", "lab equipment", "lab instrumentation", "test equipment", "power supply", "power supplies", "מעבדה"]}
     "troubleshooting": {weight: 3, aliases: ["debugging", "debug", "root cause", "root-cause", "תקלות"]}
-    "electrical interfaces": {weight: 2, aliases: ["interfaces", "interface validation", "hardware integration", "ממשקים"]}
+    "electrical interfaces": {weight: 3, aliases: ["interfaces", "interface validation", "hardware integration", "ממשקים"]}
     # tools
     "matlab": {weight: 3, aliases: ["simulink"]}
     "python": {weight: 2, aliases: ["scripting"]}
     "sql": {weight: 2, aliases: ["database", "databases", "sql server", "mysql"]}
     "circuit simulation": {weight: 1, aliases: ["ltspice", "spice", "psim"]}
     "fpga basics": {weight: 1, aliases: ["vivado", "rtl"]}
+    "low-speed protocols": {weight: 2, aliases: ["uart", "i2c"]}
+    "signal integrity basics": {weight: 1, aliases: ["signal integrity"]}
     # domain / general
     "defense": {weight: 2, aliases: ["defence", "airborne", "naval", "aerospace", "ביטחוני", "ביטחון", "בטחוני"]}
     "multidisciplinary": {weight: 1, aliases: ["cross-functional", "cross functional", "multidisciplinary", "multi-disciplinary", "רב תחומי"]}
-    "hardware": {weight: 1, aliases: ["hw", "electronics", "חומרה", "אלקטרוניקה"]}
+    "hardware": {weight: 3, aliases: ["hw", "electronics", "hardware integration", "hardware validation", "hardware testing", "חומרה", "אלקטרוניקה"]}
     "b.sc ee": {weight: 2, aliases: ["electrical engineering", "electronics engineering", "electrical and electronics", "b.sc in electrical", "הנדסת חשמל", "הנדסת אלקטרוניקה", "מהנדס חשמל"]}
 
   gaps:
@@ -572,13 +603,11 @@ job_types:
       "c/c++": {weight: 1, aliases: ["c++", "cpp"]}
       "rf validation": {weight: 2, aliases: ["rf validation", "rf verification", "rf integration"]}
 
-  # Integration / system / validation / hardware jobs -> the integration CV
-  "System & Integration":
+  # Hardware / integration / validation / system jobs and everything else -> the hardware CV
+  "Hardware & Integration":
     default: true
-    cv: "cvs/system-integration/cv.pdf"
-    title_keywords: ["integration", "integrator", "system", "systems", "validation", "verification",
-                     "test", "hardware", "hw", "electronics", "electrical", "lab",
-                     "אינטגרציה", "מערכת", "ולידציה", "בדיקות", "חומרה", "אלקטרוניקה", "חשמל"]
-    skills:
-      "low-speed protocols": {weight: 1, aliases: ["uart", "i2c"]}
-      "signal integrity basics": {weight: 1, aliases: ["signal integrity"]}
+    cv: "cvs/hardware/cv.pdf"
+    title_keywords: ["hardware", "hw", "electronics", "electrical", "board", "pcb", "analog", "fpga",
+                     "circuit", "bring-up", "lab", "integration", "integrator", "system", "systems",
+                     "validation", "verification", "test",
+                     "חומרה", "אלקטרוניקה", "חשמל", "כרטיסים", "אינטגרציה", "מערכת", "ולידציה", "בדיקות"]
