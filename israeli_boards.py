@@ -232,3 +232,77 @@ if __name__ == "__main__":
         print(f"\n{name}: {len(jobs)} jobs")
         for j in jobs[:5]:
             print(f"  {j['Job ID']} | {j['Job Title']} @ {j['Company']} | {j['Location']} | {j['Posted']}")
+
+
+# ---------------------------------------------------------------- Drushim
+
+DRUSHIM_BASE = "https://www.drushim.co.il"
+
+
+def _drushim_min_years(text: str | None) -> int | None:
+    """"ללא נסיון" -> 0, "1-2 שנים" -> 1, "5-6 שנים" -> 5, "7+ שנים" -> 7."""
+    if not text:
+        return None
+    if "ללא" in text:
+        return 0
+    m = re.search(r"\d+", text)
+    return int(m.group()) if m else None
+
+
+def parse_drushim_page(page_html: str) -> list[dict]:
+    """Drushim is a Next.js site: the search results are in the __NEXT_DATA__ JSON."""
+    import json
+    raw = _first(r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', page_html)
+    if not raw:
+        return []
+    data = json.loads(raw)
+    jobs = []
+    for q in data.get("props", {}).get("pageProps", {}).get("dehydratedState", {}).get("queries", []):
+        key = q.get("queryKey") or []
+        if not key or key[0] != "search-results":
+            continue
+        for page in (q.get("state", {}).get("data") or {}).get("pages", []):
+            for j in page.get("jobs") or []:
+                if not j.get("id") or not j.get("title"):
+                    continue
+                cities = [c for c in (j.get("cities") or []) if isinstance(c, str)] or [j.get("city")]
+                jobs.append({
+                    "Job ID": f"dr-{j['id']}",
+                    "Job Title": j["title"],
+                    "Company": j.get("companyName") or "Drushim (company hidden)",
+                    "Location": ", ".join(dict.fromkeys(c for c in cities if c)) or None,
+                    "Job Description": _text(j.get("description")),
+                    "Min Experience (Y)": _drushim_min_years(j.get("experience")),
+                    "Posted": (j.get("publishedAtIso") or "")[:10] or None,
+                    "Position Link": DRUSHIM_BASE + j["jobUrl"] if j.get("jobUrl") else None,
+                    "platform": "drushim",
+                })
+    return jobs
+
+
+def scrape_drushim(queries: list[str], max_pages: int = 2, delay: float = 1.0) -> list[dict]:
+    """Free-text search on Drushim for each query; results merged by job id."""
+    session = _session()
+    seen: dict[str, dict] = {}
+    empty, last = 0, None
+    for q in queries:
+        for page in range(1, max_pages + 1):
+            url = f"{DRUSHIM_BASE}/jobs/search/{quote(q)}/"
+            r = session.get(url, params={"page": page} if page > 1 else None, timeout=TIMEOUT)
+            r.raise_for_status()
+            found = parse_drushim_page(r.text)
+            if page == 1 and not found:
+                empty += 1
+                last = r
+            new = [j for j in found if j["Job ID"] not in seen]
+            for job in found:
+                seen.setdefault(job["Job ID"], job)
+            if len(found) < 20 or not new:  # last page (or the page param is ignored)
+                break
+            pause(delay)
+        pause(delay)
+    if queries and empty == len(queries):
+        raise RuntimeError(f"Drushim: no jobs for any query (last: HTTP {getattr(last, 'status_code', '?')}) "
+                           "— blocked or layout changed")
+    logger.info("Drushim: %d unique jobs from %d queries (%d empty)", len(seen), len(queries), empty)
+    return list(seen.values())

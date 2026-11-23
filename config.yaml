@@ -84,6 +84,26 @@ sources:
     max_pages: 1
     queries: *israeli_queries
 
+  # Drushim — the biggest Israeli board; many mid-size / traditional companies post only here
+  drushim:
+    enabled: true
+    max_pages: 2
+    queries:
+      - "מהנדס חומרה"
+      - "מהנדס אלקטרוניקה"
+      - "מהנדס חשמל"
+      - "מהנדס מערכת"
+      - "מהנדס אינטגרציה"
+      - "מהנדס בדיקות"
+      - "ולידציה"
+      - "מהנדס RF"
+      - "hardware engineer"
+      - "electronics engineer"
+      - "integration engineer"
+      - "validation engineer"
+      - "system engineer"
+      - "RF engineer"
+
   indeed:
     enabled: true
     sites: ["indeed"]
@@ -609,6 +629,42 @@ companies:
     platform: "comeet"
     slug: "percepto"
     uid: "44.000"
+  - name: "Regulus"               # counter-drone / EW defense-tech
+    platform: "comeet"
+    slug: "regulus"
+    uid: "9A.00D"
+  - name: "Milpower Source"       # power electronics for defense
+    platform: "comeet"
+    slug: "milpower"
+    uid: "D4.00B"
+  - name: "abra"                  # defense engineering services, center
+    platform: "comeet"
+    slug: "abra_rnd"
+    uid: "15.007"
+  - name: "Cognyte"               # Herzliya — R&D system integration
+    platform: "comeet"
+    slug: "cognyte"
+    uid: "f2.009"
+  - name: "Eitan Medical"         # medical devices — electrical / V&V
+    platform: "comeet"
+    slug: "eitanmedical"
+    uid: "C6.00F"
+  - name: "DustPhotonics"         # silicon photonics — electrical test
+    platform: "comeet"
+    slug: "dustphotonics"
+    uid: "05.00B"
+  - name: "Exodigo"               # RF & multidisciplinary systems
+    platform: "comeet"
+    slug: "exodigo"
+    uid: "89.005"
+  - name: "CommIT"                # electronics / integration services
+    platform: "comeet"
+    slug: "comm-it"
+    uid: "76.008"
+  - name: "Imagry"                # autonomous driving — HW integration
+    platform: "comeet"
+    slug: "imagry"
+    uid: "b7.00f"
 
 # ------------------------------------------------------------------ notifications
 # Telegram only. Secrets needed: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID

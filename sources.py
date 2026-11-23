@@ -11,7 +11,7 @@ import threading
 import time
 from collections import Counter
 
-from israeli_boards import scrape_alljobs, scrape_jobmaster
+from israeli_boards import scrape_alljobs, scrape_drushim, scrape_jobmaster
 from board_scrapers import scrape_amazon, scrape_hiremetech, scrape_indeed, scrape_mobileye, scrape_workday
 from career_scraper import scrape_career_pages
 from defense_scrapers import scrape_elbit, scrape_iai, scrape_rafael
@@ -52,7 +52,8 @@ def build_source_tasks(config: dict) -> list[tuple[str, callable]]:
         amazon = amazon if isinstance(amazon, dict) else {}
         tasks.append(("Amazon / Annapurna", lambda: scrape_amazon(amazon.get("country", "ISR"))))
 
-    for key, name, fn in (("alljobs", "AllJobs", scrape_alljobs), ("jobmaster", "JobMaster", scrape_jobmaster)):
+    for key, name, fn in (("alljobs", "AllJobs", scrape_alljobs), ("jobmaster", "JobMaster", scrape_jobmaster),
+                          ("drushim", "Drushim", scrape_drushim)):
         board = src.get(key)
         if _enabled(board) and isinstance(board, dict):
             tasks.append((name, lambda b=board, f=fn: f(b.get("queries", []), b.get("max_pages", 2))))
