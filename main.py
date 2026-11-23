@@ -165,7 +165,7 @@ def main(limit: int | None = None, dry_run: bool = False, mark_seen: bool = Fals
     add_candidates(new_jobs, apply_score)
     if tg_targets and to_send:  # so send_queue.py never sends these again
         from apply_queue import load_queue, save_queue
-        done = {j.get("Job ID") for j in to_send}
+        done = {str(j.get("Job ID")) for j in to_send}
         queue = load_queue()
         for item in queue:
             if item.get("job_id") in done:
