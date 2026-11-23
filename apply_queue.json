@@ -2783,7 +2783,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "me-4e512957-1993-4606-bd4e-4f271c38943b",
@@ -2808,7 +2809,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "jm-9901473",
@@ -2835,7 +2837,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "jm-9812962",
@@ -2863,7 +2866,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "jm-9920479",
@@ -2885,7 +2889,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "dr-38878221",
@@ -2906,7 +2911,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "dr-39038201",
@@ -2928,7 +2934,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "dr-39129629",
@@ -2953,7 +2960,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "dr-39173215",
@@ -2974,7 +2982,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "dr-38893820",
@@ -2998,7 +3007,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "co-0C.F64",
@@ -3024,7 +3034,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "co-B3.571",
@@ -3049,7 +3060,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "aj-8911995",
@@ -3076,7 +3088,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "co-E4.578",
@@ -3099,7 +3112,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "dr-38895454",
@@ -3128,7 +3142,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "co-FA.47B",
@@ -3151,7 +3166,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "dr-39080191",
@@ -3177,7 +3193,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "wd-hp-3169796",
@@ -3203,7 +3220,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "dr-38898703",
@@ -3225,7 +3243,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "co-2D.A67",
@@ -3247,7 +3266,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "dr-38996040",
@@ -3267,7 +3287,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "dr-39164114",
@@ -3291,7 +3312,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "dr-38936494",
@@ -3315,7 +3337,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "co-B2.27E",
@@ -3343,7 +3366,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "dr-38879095",
@@ -3366,7 +3390,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "co-BE.47A",
@@ -3389,7 +3414,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "wd-hp-UNI2641",
@@ -3409,7 +3435,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "dr-39124024",
@@ -3429,7 +3456,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "dr-38987509",
@@ -3449,7 +3477,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "dr-39038182",
@@ -3469,7 +3498,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "hm-154493111",
@@ -3499,7 +3529,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "li-li-4485193834",
@@ -3523,7 +3554,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "li-li-4493641169",
@@ -3549,7 +3581,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "li-li-4489390269",
@@ -3580,7 +3613,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "li-li-4493338211",
@@ -3604,7 +3638,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "li-li-4492386714",
@@ -3635,7 +3670,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "li-li-4493374034",
@@ -3661,7 +3697,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "li-li-4492384620",
@@ -3688,7 +3725,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "li-li-4492395074",
@@ -3719,7 +3757,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "li-li-4493196428",
@@ -3741,7 +3780,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "li-li-4492398077",
@@ -3772,7 +3812,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "li-li-4492343531",
@@ -3800,7 +3841,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "li-li-4489466399",
@@ -3824,7 +3866,8 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   },
   {
     "job_id": "li-li-4440216929",
@@ -3862,6 +3905,7 @@
     ],
     "added": "2026-11-23",
     "status": "pending",
-    "note": ""
+    "note": "",
+    "telegram_sent": true
   }
 ]

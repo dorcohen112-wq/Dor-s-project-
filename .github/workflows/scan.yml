@@ -57,7 +57,7 @@ jobs:
             dry-run)   python main.py --dry-run ;;
             mark-seen) python main.py --mark-seen ;;
             rescore)   python main.py --rescore ;;
-            send-queue) python send_queue.py --limit 25 ;;
+            send-queue) python send_queue.py --limit 100 ;;
           esac 2>&1 | tee scan-output.txt
           exit "${PIPESTATUS[0]}"
 
