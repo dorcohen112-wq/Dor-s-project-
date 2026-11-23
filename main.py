@@ -147,17 +147,30 @@ def main(limit: int | None = None, dry_run: bool = False, mark_seen: bool = Fals
             print(f"      {job.get('Position Link')}")
         return
 
-    # 4. Notify
+    # 4. Notify — only jobs at or above telegram.min_score; the rest are still marked as seen below
+    min_score = (config.get("telegram") or {}).get("min_score") or 0
+    to_send = [j for j in new_jobs if (j.get("Match Score") or 0) >= min_score]
+    if len(to_send) < len(new_jobs):
+        logger.info("Notify: %d of %d new jobs scored >= %d%% (the rest are not sent)",
+                    len(to_send), len(new_jobs), min_score)
     sent_count = 0
-    if webhook_map:
-        logger.info("Step 4a: Sending %d new jobs to Discord...", len(new_jobs))
-        sent_count = max(sent_count, notify_jobs(webhook_map, new_jobs))
-    if tg_targets:
-        logger.info("Step 4b: Sending %d new jobs to Telegram...", len(new_jobs))
-        sent_count = max(sent_count, notify_jobs_telegram(tg_token, tg_targets, new_jobs))
+    if webhook_map and to_send:
+        logger.info("Step 4a: Sending %d new jobs to Discord...", len(to_send))
+        sent_count = max(sent_count, notify_jobs(webhook_map, to_send))
+    if tg_targets and to_send:
+        logger.info("Step 4b: Sending %d new jobs to Telegram...", len(to_send))
+        sent_count = max(sent_count, notify_jobs_telegram(tg_token, tg_targets, to_send))
 
     # Strong matches go to the apply queue (reviewed and submitted with Claude, never automatically)
     add_candidates(new_jobs, apply_score)
+    if tg_targets and to_send:  # so send_queue.py never sends these again
+        from apply_queue import load_queue, save_queue
+        done = {j.get("Job ID") for j in to_send}
+        queue = load_queue()
+        for item in queue:
+            if item.get("job_id") in done:
+                item["telegram_sent"] = True
+        save_queue(queue)
 
     # 5. Save state — add the Job IDs of successfully processed jobs
     new_ids = {job["Job ID"] for job in new_jobs if job.get("Job ID") is not None}
