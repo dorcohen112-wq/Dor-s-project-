@@ -3470,5 +3470,35 @@
     "added": "2026-11-23",
     "status": "pending",
     "note": ""
+  },
+  {
+    "job_id": "hm-154493111",
+    "title": "Wireless Communication System Engineer",
+    "company": "HireMe (company hidden)",
+    "location": "Ashdod",
+    "category": "Hardware & Electrical",
+    "job_type": "Hardware & Integration",
+    "cv": "cvs/hardware/cv.pdf",
+    "source": "HireMeTech",
+    "link": "https://hiremetech.com/job/154493111",
+    "score": 83,
+    "matched_skills": [
+      "rf",
+      "electronic warfare",
+      "measurement equipment",
+      "signal analysis",
+      "integration",
+      "system engineering",
+      "verification",
+      "lab",
+      "electrical interfaces",
+      "multidisciplinary",
+      "hardware",
+      "b.sc ee",
+      "-firmware/embedded"
+    ],
+    "added": "2026-11-23",
+    "status": "pending",
+    "note": ""
   }
 ]
