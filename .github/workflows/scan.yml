@@ -4,7 +4,7 @@ name: Scan
 # winter (10/13/16/19 in summer), Sunday–Thursday. Edit the cron line to change the schedule.
 on:
   schedule:
-    - cron: "0 7,10,13,16 * * 0-4"
+    - cron: "17 6,9,12,15 * * 0-4"
   workflow_dispatch:
     inputs:
       mode:
