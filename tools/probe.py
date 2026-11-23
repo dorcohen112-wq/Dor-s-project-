@@ -12,5 +12,10 @@ for url in ["https://www.drushim.co.il/jobs/search/%D7%9E%D7%94%D7%A0%D7%93%D7%A
     r=requests.get(url,headers=H,timeout=30); print("URL",url,r.status_code,len(r.text))
     m=re.search(r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>',r.text,re.S)
     if not m: print("no NEXT_DATA; scripts:", re.findall(r'src="([^"]+)"',r.text)[:5]); print(r.text[:500]); continue
-    d=json.loads(m.group(1)); show(d.get("props",{}).get("pageProps",{}))
+    d=json.loads(m.group(1)); qs=d["props"]["pageProps"]["dehydratedState"]["queries"]
+    for q in qs:
+        print("QUERYKEY", json.dumps(q.get("queryKey"),ensure_ascii=False)[:300])
+        data=q["state"]["data"]
+        if isinstance(data,dict): show(data)
+        elif isinstance(data,list) and data and isinstance(data[0],dict) and len(json.dumps(data[0]))>300: show(data[0])
     print("buildId", d.get("buildId"), "page", d.get("page"))
