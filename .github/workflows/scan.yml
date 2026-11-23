@@ -1,7 +1,8 @@
 name: Scan
 
-# Runs the job scanner on GitHub. Times are UTC: 07/10/13/16 UTC = 9/12/15/18 Israel time in
-# winter (10/13/16/19 in summer), Sunday–Thursday. Edit the cron line to change the schedule.
+# Runs the job scanner on GitHub. Times are UTC: 06:17/09:17/12:17/15:17 UTC = 8:17/11:17/14:17/17:17
+# Israel time in winter (an hour later in summer), Sunday–Thursday. Off the top of the hour and an hour
+# early because GitHub often starts scheduled runs late. Edit the cron line to change the schedule.
 on:
   schedule:
     - cron: "17 6,9,12,15 * * 0-4"
