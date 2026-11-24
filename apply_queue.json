@@ -4290,5 +4290,56 @@
     "status": "pending",
     "note": "",
     "telegram_sent": true
+  },
+  {
+    "job_id": "hm-154599534",
+    "title": "Visual Intelligence Integration Engineer",
+    "company": "HireMe (company hidden)",
+    "location": "Rehovot",
+    "category": "Hardware & Electrical",
+    "job_type": "Hardware & Integration",
+    "cv": "cvs/hardware/cv.pdf",
+    "source": "HireMeTech",
+    "link": "https://hiremetech.com/job/154599534",
+    "score": 86,
+    "matched_skills": [
+      "system integration",
+      "integration",
+      "system engineering",
+      "verification",
+      "testing",
+      "matlab",
+      "multidisciplinary",
+      "hardware",
+      "-mechanical",
+      "no description"
+    ],
+    "added": "2026-11-24",
+    "status": "pending",
+    "note": "",
+    "telegram_sent": true
+  },
+  {
+    "job_id": "hm-154599551",
+    "title": "מהנדס/ת ייצור חשמל ואלקטרוניקה",
+    "company": "HireMe (company hidden)",
+    "location": "נתב\"ג",
+    "category": "Hardware & Electrical",
+    "job_type": "Hardware & Integration",
+    "cv": "cvs/hardware/cv.pdf",
+    "source": "HireMeTech",
+    "link": "https://hiremetech.com/job/154599551",
+    "score": 80,
+    "matched_skills": [
+      "integration",
+      "electrical interfaces",
+      "defense",
+      "hardware",
+      "3y req"
+    ],
+    "added": "2026-11-24",
+    "status": "pending",
+    "note": "",
+    "telegram_sent": true
   }
 ]
