@@ -4548,5 +4548,28 @@
     "status": "pending",
     "note": "",
     "telegram_sent": true
+  },
+  {
+    "job_id": "jm-9930778",
+    "title": "לחברה טכנולוגית בראשון לציון דרוש/ה אינטגרטור",
+    "company": "URSA GROUP",
+    "location": "ראשון לציון",
+    "category": "Integration & System",
+    "job_type": "Hardware & Integration",
+    "cv": "cvs/hardware/cv.pdf",
+    "source": "JobMaster",
+    "link": "https://www.jobmaster.co.il/jobs/checknum.asp?key=9930778",
+    "score": 90,
+    "matched_skills": [
+      "integration",
+      "testing",
+      "troubleshooting",
+      "electrical interfaces",
+      "hardware"
+    ],
+    "added": "2026-11-25",
+    "status": "pending",
+    "note": "",
+    "telegram_sent": true
   }
 ]
