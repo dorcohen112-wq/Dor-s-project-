@@ -4625,5 +4625,61 @@
     "status": "pending",
     "note": "",
     "telegram_sent": true
+  },
+  {
+    "job_id": "hm-154123488",
+    "title": "מהנדס/ת אלקטרוניקה",
+    "company": "HireMe (company hidden)",
+    "location": "יהוד",
+    "category": "Hardware & Electrical",
+    "job_type": "Hardware & Integration",
+    "cv": "cvs/hardware/cv.pdf",
+    "source": "HireMeTech",
+    "link": "https://hiremetech.com/job/154123488",
+    "score": 89,
+    "matched_skills": [
+      "system integration",
+      "integration",
+      "testing",
+      "electrical interfaces",
+      "hardware",
+      "b.sc ee",
+      "3y req"
+    ],
+    "added": "2026-11-26",
+    "status": "pending",
+    "note": "",
+    "telegram_sent": true
+  },
+  {
+    "job_id": "hm-153426360",
+    "title": "Embedded Hardware & System Integration Engineer",
+    "company": "HireMe (company hidden)",
+    "location": "Herzliya",
+    "category": "Hardware & Electrical",
+    "job_type": "Hardware & Integration",
+    "cv": "cvs/hardware/cv.pdf",
+    "source": "HireMeTech",
+    "link": "https://hiremetech.com/job/153426360",
+    "score": 76,
+    "matched_skills": [
+      "system integration",
+      "integration",
+      "bring-up",
+      "testing",
+      "lab",
+      "troubleshooting",
+      "electrical interfaces",
+      "low-speed protocols",
+      "defense",
+      "hardware",
+      "-high-speed interfaces",
+      "-board design",
+      "-networking"
+    ],
+    "added": "2026-11-26",
+    "status": "pending",
+    "note": "",
+    "telegram_sent": true
   }
 ]
