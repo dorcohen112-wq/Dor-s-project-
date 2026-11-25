@@ -4571,5 +4571,59 @@
     "status": "pending",
     "note": "",
     "telegram_sent": true
+  },
+  {
+    "job_id": "hm-154459643",
+    "title": "Integration & Validation Engineer",
+    "company": "HireMe (company hidden)",
+    "location": "Kfar Saba",
+    "category": "Hardware & Electrical",
+    "job_type": "Hardware & Integration",
+    "cv": "cvs/hardware/cv.pdf",
+    "source": "HireMeTech",
+    "link": "https://hiremetech.com/job/154459643",
+    "score": 90,
+    "matched_skills": [
+      "integration",
+      "validation",
+      "verification",
+      "hardware"
+    ],
+    "added": "2026-11-25",
+    "status": "pending",
+    "note": "",
+    "telegram_sent": true
+  },
+  {
+    "job_id": "in-in-65b3e3386f765f89",
+    "title": "Junior Systems Engineer",
+    "company": "Applied Materials",
+    "location": "רחובות, M, Israel",
+    "category": "Integration & System",
+    "job_type": "Hardware & Integration",
+    "cv": "cvs/hardware/cv.pdf",
+    "source": "Indeed",
+    "link": "https://careers.appliedmaterials.com/careers/job/790319479621",
+    "score": 84,
+    "matched_skills": [
+      "integration",
+      "system engineering",
+      "validation",
+      "verification",
+      "testing",
+      "lab",
+      "troubleshooting",
+      "matlab",
+      "python",
+      "multidisciplinary",
+      "hardware",
+      "b.sc ee",
+      "-ml/vision",
+      "-mechanical"
+    ],
+    "added": "2026-11-25",
+    "status": "pending",
+    "note": "",
+    "telegram_sent": true
   }
 ]
