@@ -4434,5 +4434,63 @@
     "status": "pending",
     "note": "",
     "telegram_sent": true
+  },
+  {
+    "job_id": "hm-154683245",
+    "title": "Junior Systems Engineer",
+    "company": "HireMe (company hidden)",
+    "location": "Rehovot",
+    "category": "Hardware & Electrical",
+    "job_type": "Hardware & Integration",
+    "cv": "cvs/hardware/cv.pdf",
+    "source": "HireMeTech",
+    "link": "https://hiremetech.com/job/154683245",
+    "score": 92,
+    "matched_skills": [
+      "integration",
+      "system engineering",
+      "validation",
+      "verification",
+      "testing",
+      "lab",
+      "troubleshooting",
+      "matlab",
+      "python",
+      "multidisciplinary",
+      "hardware",
+      "b.sc ee",
+      "-ml/vision",
+      "-mechanical",
+      "no description"
+    ],
+    "added": "2026-11-25",
+    "status": "pending",
+    "note": "",
+    "telegram_sent": true
+  },
+  {
+    "job_id": "aj-8916397",
+    "title": "אינטגרטור /ית מערכות והובלת פרויקטים טכניים",
+    "company": "Experis Software",
+    "location": "יהוד מונוסון",
+    "category": "Integration & System",
+    "job_type": "Hardware & Integration",
+    "cv": "cvs/hardware/cv.pdf",
+    "source": "AllJobs",
+    "link": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8916397",
+    "score": 76,
+    "matched_skills": [
+      "system integration",
+      "integration",
+      "verification",
+      "testing",
+      "electrical interfaces",
+      "hardware",
+      "-mechanical"
+    ],
+    "added": "2026-11-25",
+    "status": "pending",
+    "note": "",
+    "telegram_sent": true
   }
 ]
