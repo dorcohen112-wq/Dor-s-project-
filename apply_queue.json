@@ -4492,5 +4492,61 @@
     "status": "pending",
     "note": "",
     "telegram_sent": true
+  },
+  {
+    "job_id": "in-in-ec13a69b3e5381da",
+    "title": "Integration Engineer",
+    "company": "parallel wireless",
+    "location": "כפר סבא, M, Israel",
+    "category": "Integration & System",
+    "job_type": "Hardware & Integration",
+    "cv": "cvs/hardware/cv.pdf",
+    "source": "Indeed",
+    "link": "https://jobs.lever.co/parallelwireless/5c55c6d5-6e4e-4c4a-9be6-f32fd2ab2100?lever-source=Indeed",
+    "score": 97,
+    "matched_skills": [
+      "rf",
+      "measurement equipment",
+      "system integration",
+      "integration",
+      "validation",
+      "verification",
+      "testing",
+      "lab",
+      "troubleshooting",
+      "python",
+      "multidisciplinary",
+      "hardware",
+      "b.sc ee",
+      "-networking",
+      "2y req"
+    ],
+    "added": "2026-11-25",
+    "status": "pending",
+    "note": "",
+    "telegram_sent": true
+  },
+  {
+    "job_id": "li-li-4493094671",
+    "title": "Integration Engineer",
+    "company": "Weirdoz",
+    "location": "Be'er Sheva, South District, Israel",
+    "category": "Integration & System",
+    "job_type": "Hardware & Integration",
+    "cv": "cvs/hardware/cv.pdf",
+    "source": "LinkedIn",
+    "link": "https://www.linkedin.com/jobs/view/4493094671",
+    "score": 89,
+    "matched_skills": [
+      "system integration",
+      "integration",
+      "lab",
+      "electrical interfaces",
+      "3y req"
+    ],
+    "added": "2026-11-25",
+    "status": "pending",
+    "note": "",
+    "telegram_sent": true
   }
 ]
