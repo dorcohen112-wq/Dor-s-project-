@@ -4681,5 +4681,32 @@
     "status": "pending",
     "note": "",
     "telegram_sent": true
+  },
+  {
+    "job_id": "li-li-4424622591",
+    "title": "SOC Clock Distribution Engineer",
+    "company": "NVIDIA",
+    "location": "Tel Aviv-Yafo, Tel Aviv District, Israel",
+    "category": "Hardware & Electrical",
+    "job_type": "Hardware & Integration",
+    "cv": "cvs/hardware/cv.pdf",
+    "source": "LinkedIn",
+    "link": "https://www.linkedin.com/jobs/view/4424622591",
+    "score": 66,
+    "matched_skills": [
+      "integration",
+      "verification",
+      "troubleshooting",
+      "python",
+      "fpga basics",
+      "b.sc ee",
+      "-networking",
+      "-asic flow",
+      "3y req"
+    ],
+    "added": "2026-11-26",
+    "status": "pending",
+    "note": "",
+    "telegram_sent": true
   }
 ]
